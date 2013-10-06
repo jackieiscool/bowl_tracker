@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 	def create
 		@team = Team.new(params[:team])
 		if @team.save
-			render @team
+			redirect_to team_path(@team.id)
 		else
 			render :new
 		end

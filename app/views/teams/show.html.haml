@@ -1,0 +1,6 @@
+%h2
+	= @team.name
+	
+- @team.bowlers.each do |b|
+	%p
+		= b.name

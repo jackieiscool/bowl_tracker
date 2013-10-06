@@ -15,6 +15,7 @@ gem 'pry'
 gem 'pry-rails'
 gem 'devise'
 gem 'protected_attributes'
+gem 'tesseract-ocr'
 
 group :doc do
   gem 'sdoc', require: false
