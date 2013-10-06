@@ -13,6 +13,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'pry'
 gem 'pry-rails'
+gem 'devise'
 
 group :doc do
   gem 'sdoc', require: false
