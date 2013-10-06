@@ -1,12 +1,16 @@
-.form
-	=form_for @bowler do |f|
-		= f.label :first_name
-		= f.text_field :first_name
-		= f.label :last_name
-		= f.text_field :last_name
-		= f.label :email
-		= f.text_field :email
-		/ = f.label :password
-		/ = f.text_field :password
-		/ = f.label :password_confirmation
-		/ = f.text_field :password_confirmation
+%h2 Sign Up
+
+%div
+	.form
+		= form_for @bowler, url: { controller: 'bowlers', action: 'create', method: 'post' } do |f|
+			= f.label :name
+			= f.text_field :name
+			= f.label :email
+			= f.text_field :email
+			= f.label :password
+			= f.password_field :password
+			= f.label :password_confirmation
+			= f.password_field :password_confirmation
+			= f.label :choose_team
+			= f.select(:team, options_for_select(@teams))
+			= f.submit "Sign Up"

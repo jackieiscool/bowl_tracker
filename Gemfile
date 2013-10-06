@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'pry'
 gem 'pry-rails'
 gem 'devise'
+gem 'protected_attributes'
 
 group :doc do
   gem 'sdoc', require: false

@@ -4,4 +4,8 @@ class Bowler < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  attr_accessible :name, :email, :password, :password_confirmation
+
+  belongs_to :team
 end
