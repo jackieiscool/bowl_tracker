@@ -7,5 +7,6 @@ class Bowler < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :password_confirmation
 
-  belongs_to :team
+  has_many :bowler_teams
+  has_many :teams, through: :bowler_teams
 end

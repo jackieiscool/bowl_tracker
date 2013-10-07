@@ -1,6 +1,7 @@
 class CreateIndividualGames < ActiveRecord::Migration
   def change
     create_table :individual_games do |t|
+    	t.hstore :frames
     	t.integer :score
     	t.integer :bowler_id
     	t.integer :team_game_id

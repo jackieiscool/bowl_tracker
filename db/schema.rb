@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006043123) do
+ActiveRecord::Schema.define(version: 20131006222200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "bowler_teams", force: true do |t|
+    t.integer  "bowler_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bowlers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -29,7 +37,6 @@ ActiveRecord::Schema.define(version: 20131006043123) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "team_id"
     t.string   "name"
   end
 
@@ -37,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131006043123) do
   add_index "bowlers", ["reset_password_token"], name: "index_bowlers_on_reset_password_token", unique: true, using: :btree
 
   create_table "individual_games", force: true do |t|
+    t.hstore   "frames"
     t.integer  "score"
     t.integer  "bowler_id"
     t.integer  "team_game_id"

@@ -1,0 +1,7 @@
+%h2 Teams
+
+- @teams.each do |t|
+	%p
+		= link_to t.name, team_path(t.id)
+
+	
