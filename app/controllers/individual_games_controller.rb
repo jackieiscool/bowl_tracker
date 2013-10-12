@@ -9,9 +9,9 @@ end
 
 def create
 	@game = IndividualGame.new(params[:individual_game])
-	@game.bowler = current_bowler
+	@game.bowler_id = params[:bowler_id]
 	if @game.save 
-		redirect_to bowler_path(current_bowler.id)
+		redirect_to bowler_path(params[:bowler_id])
 	else
 		render :new
 	end

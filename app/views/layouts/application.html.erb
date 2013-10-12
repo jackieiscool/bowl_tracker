@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <title>BowlTracker</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<p>
 		<%= link_to "Sign Out", destroy_bowler_session_path, method: 'delete' if current_bowler %>
 	</p>
+	<p><%= link_to "My Profile", bowler_path(current_bowler.id)%></p>
 	<p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 

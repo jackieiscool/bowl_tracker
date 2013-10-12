@@ -4,3 +4,5 @@
 - @team.bowlers.each do |b|
 	%p
 		= link_to b.name, bowler_path(b.id)
+
+= link_to "New Game", new_team_team_game_path(@team.id)

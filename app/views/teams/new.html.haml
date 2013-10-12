@@ -4,4 +4,5 @@
 	= form_for @team do |f|
 		= f.label :name
 		= f.text_field :name
+		= hidden_field_tag :id, current_bowler.id
 		= f.submit

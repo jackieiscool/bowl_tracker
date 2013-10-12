@@ -4,12 +4,14 @@ BowlTracker::Application.routes.draw do
 
   devise_for :bowlers, controllers: { registrations: "bowlers_registrations"}
 
-  resources :bowlers, only: [:show]
+  resources :bowlers, only: [:show] do
+  	resources :teams, only: [:new]
+  end
 
-  resources :teams
+  resources :teams, except: [:new] do
+  	resources :team_games
+  end
 
   resources :individual_games
-
-  resources :team_games
 
 end

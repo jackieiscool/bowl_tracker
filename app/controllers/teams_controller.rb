@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
 	def index
-		@teams = Team.all
+		@teams = current_bowler.teams
 	end
 
 	def show
@@ -14,7 +14,10 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = Team.new(params[:team])
+		binding.pry
+		bowler = Bowler.find(params[:id])
 		if @team.save
+			bowler.teams << @team
 			redirect_to team_path(@team.id)
 		else
 			render :new
