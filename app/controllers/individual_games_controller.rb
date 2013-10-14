@@ -13,7 +13,8 @@ def create
 	if @game.save 
 		redirect_to bowler_path(params[:bowler_id])
 	else
-		render :new
+		flash[:alert] = @game.errors.full_messages
+		redirect_to bowler_path(params[:bowler_id])
 	end
 end
 
