@@ -3,5 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .average {
-	padding-top: 10px; 	
+	padding: 20px; 	
+}
+
+.game_form {
+	display: none;
+}
+
+form {
+	width: 10em;
+}
+
+label {
+	width: 4em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+	color: #701112;
+	font-weight: bold;
+}
+
+input
+{
+margin-left: 4.5em;
+}
+
+.submit input {
+margin-left: 4.5em;
 }

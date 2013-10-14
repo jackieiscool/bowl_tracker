@@ -6,6 +6,7 @@ class BowlersController < ApplicationController
 
 	def show
 		@bowler = current_bowler
+		@game = IndividualGame.new
 		@games = @bowler.individual_games
 	end
 
