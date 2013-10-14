@@ -2,16 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.info
+{
+    position: absolute;
+    right: 300px;
+    top: 15%;
+}
+
 .average {
-	padding: 20px; 	
+	padding: 10px; 	
+}
+
+.teams {
+	padding: 10px;
+}
+
+.new {
+  display: inline;
+}
+
+.hide {
+  display: none;
 }
 
 .game_form {
-	display: none;
+  display: none;
 }
 
 form {
-	width: 10em;
+  width: 10em;
 }
 
 label {
@@ -26,9 +45,11 @@ label {
 
 input
 {
-margin-left: 4.5em;
+    margin-left: 4.5em;
 }
 
 .submit input {
-margin-left: 4.5em;
+    margin-left: 4.5em;
 }
+
+ 

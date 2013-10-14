@@ -4,11 +4,17 @@
 $( document ).ready(function() {
 
 
-  $(".new").click( function()
-	  {
-	   $(".game_form").css("display", "inline");
-	  }
+  $(".new").click(function() {
+     $(".game_form").css("display", "inline");
+     $(".hide").css("display", "inline");
+     $(".new").css("display", "none");
+    }
   );
 
+  $(".hide").click(function() {
+    $(".game_form").css("display", "none");
+    $(".hide").css("display", "none");
+    $(".new").css("display", "inline");
+  });
 
 });

@@ -1,16 +1,20 @@
 %h2 
 	= @bowler.name
 
+%div.info
 	.average
-		Average: 
+		%h4 Average: 
 		= @bowler.average
-	
-	/ %p
-	/ 	- @games.each do |g|
-	/ 		= g.score
-	/ 		= g.frames
+
+	.teams
+		%h4 My Teams:
+		- @bowler.teams.each do |t|
+			%li 
+				= link_to t.name, team_path(t.id)
+		= link_to "Join New Team", new_bowler_team_path(current_bowler.id)
 
 %button.new "New Game"
+%button.hide "Hide"
 
 %div.game_form
 	= form_for @game do |f|
@@ -51,7 +55,5 @@
 		= hidden_field_tag :bowler_id, current_bowler.id
 		= f.submit
 
-= link_to "My Teams", teams_path
 
-= link_to "Join New Team", new_bowler_team_path(current_bowler.id)
 
