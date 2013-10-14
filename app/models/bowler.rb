@@ -34,6 +34,6 @@ class Bowler < ActiveRecord::Base
 
   def average
   	scores = self.individual_games.map { |g| g.score }
-  	scores.reduce(:+) / scores.length
+  	scores.empty? ? 0 : scores.reduce(:+) / scores.length
   end
 end

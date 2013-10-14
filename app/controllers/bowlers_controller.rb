@@ -5,7 +5,7 @@ class BowlersController < ApplicationController
 	end
 
 	def show
-		@bowler = Bowler.find(params[:id])
+		@bowler = current_bowler
 		@games = @bowler.individual_games
 	end
 

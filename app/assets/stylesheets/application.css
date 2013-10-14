@@ -1,13 +1,116 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+.title{
+	text-align: center;
+	color: #701112;
+}
+
+.header {
+	background-color: #C5BD99;
+}
+
+nav
+{
+    position: fixed;
+    left: -16em;
+    top: 0;
+    bottom: 0;
+    background-color: #424242;
+    border-right: 50px solid #C5BD99;
+    /*box-shadow: 4px 0 5px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    cursor: pointer;
+}
+ 
+nav:after
+{
+    position: absolute;
+    content: ' ';
+    width: 0;
+    height: 0;
+    right: -70px;
+    top: 50%;
+    border-width: 15px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #C5BD99;
+}
+
+nav ul
+{
+    width: 14em;
+    list-style-type: none;
+    margin: 0;
+    padding: 1em;
+    color: #FFFFFF;
+}
+
+.main, nav {
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+nav:hover
+{
+    left: 0;
+}
+
+nav:hover ~ .main
+{
+    -webkit-transform: translateX(16em) perspective(600px);
+    -moz-transform: translateX(16em) perspective(600px);
+    -ms-transform: translateX(16em) perspective(600px);
+    -o-transform: translateX(16em) perspective(600px);
+    transform: translateX(16em) perspective(600px);
+}
+
+li:hover {
+	color: #701112;
+}
+
+li a:hover {
+	color: #701112;
+}
+
+nav a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.main {
+    position: fixed;
+    width: 70%;
+    left: 0;
+    top: 15%;
+    right: 0;
+    bottom: 0;
+    padding: 30px 15%;
+    background-color: #fff;
+    overflow: auto;
+    z-index: 0;
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    -o-transform-origin: 0 50%;
+    /*transform-origin: 0 50%;*/
+}
+
+/*.main:after {
+    position: absolute;
+    content: ' ';
+    left: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.2) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(right, rgba(0,0,0,0.2) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(right, rgba(0,0,0,0.2) 0%, transparent 100%);
+    background-image: -o-linear-gradient(right, rgba(0,0,0,0.2) 0%, transparent 100%);
+    background-image: linear-gradient(right, rgba(0,0,0,0.2) 0%, transparent 100%);
+    pointer-events: none;
+}*/
+
+/*.content {
+	position: fixed;
+	top: ;
+}*/

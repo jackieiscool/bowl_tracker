@@ -1,6 +1,6 @@
 BowlTracker::Application.routes.draw do
   
-  root to: 'teams#index'
+  root to: 'bowlers#show', id: 1
 
   devise_for :bowlers, controllers: { registrations: "bowlers_registrations"}
 

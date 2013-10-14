@@ -1,10 +1,14 @@
 %h2 
-	%p
-		= @bowler.name
-	%p
-		- @games.each do |g|
-			= g.score
-			= g.frames
+	= @bowler.name
+
+	.average
+		Average: 
+		= @bowler.average
+	
+	/ %p
+	/ 	- @games.each do |g|
+	/ 		= g.score
+	/ 		= g.frames
 
 = link_to "New Game", new_individual_game_path
 
