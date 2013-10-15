@@ -2,30 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.info
-{
-    position: absolute;
-    right: 300px;
-    top: 15%;
+body {
+  color: #424242;
+}
+
+button {
+  width: 15em;
+  height: 2.5em;
+  color :#C5BD99;
+  background-color: #701112;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border-width: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info {
+  display: inline;
+
 }
 
 .average {
-	padding: 10px; 	
+	padding: 10px; 
+  font-size: 150%;	
 }
 
 .teams {
 	padding: 10px;
+  background-color: #C5BD99;
+  position: absolute;
+  right: 1%;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  text-align: center;
+  padding: 5px;
 }
 
-.new {
+.teams li {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.teams li a {
+  color: #701112;
+}
+
+.create_team {
   display: inline;
 }
 
-.hide {
+.new_game {
+  display: inline;
+}
+
+.hide_team {
+  display: none;
+}
+
+.hide_game {
   display: none;
 }
 
 .game_form {
+  display: none;
+}
+
+.team_form {
   display: none;
 }
 
@@ -43,13 +87,9 @@ label {
 	font-weight: bold;
 }
 
-input
-{
-    margin-left: 4.5em;
+input {
+  margin-left: 4.5em;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
-
-.submit input {
-    margin-left: 4.5em;
-}
-
  

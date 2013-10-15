@@ -36,4 +36,21 @@ class Bowler < ActiveRecord::Base
   	scores = self.individual_games.map { |g| g.score }
   	scores.empty? ? 0 : scores.reduce(:+) / scores.length
   end
+
+  def sorted_scores
+    unless individual_games.empty?
+      ordered = self.individual_games.order('individual_games.score desc')
+      ordered.map { |game|  game.score}
+    else
+      [0]
+    end
+  end
+
+  def best
+    sorted_scores.first
+  end
+
+  def worst
+    sorted_scores.last
+  end
 end

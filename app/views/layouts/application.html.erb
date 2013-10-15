@@ -13,25 +13,19 @@
 
 	<nav> 
 		<ul>
-			<li>Do things</li>
-			<li><%= link_to "Sign Out", destroy_bowler_session_path, method: 'delete' if current_bowler %></li>
+      <% if current_bowler %>
+        <li><%= link_to "My Profile", bowler_path(current_bowler.id) %></li>
+  			<li><%= link_to "Sign Out", destroy_bowler_session_path, method: 'delete'%></li>
+      <% end %>
 		</ul>
 	</nav>
 
 	<div class="main">
 		<p class="notice">
-			<% if notice %>
-				<% notice.each do |n| %>
-					<li><%= n %>
-				<% end %>
-			<% end %>
+			<%= notice %>
 		</p>
   	<p class="alert">
-  		<% if alert %>
-				<% alert.each do |a| %>
-					<li><%= a %></li>
-				<%end %>
-			<% end %>
+  		<%= alert %>
 		</p>
   	<%= yield %>
 	</div>

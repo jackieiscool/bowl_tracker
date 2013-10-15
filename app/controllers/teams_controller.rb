@@ -14,13 +14,13 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = Team.new(params[:team])
-		binding.pry
 		bowler = Bowler.find(params[:id])
 		if @team.save
 			bowler.teams << @team
-			redirect_to team_path(@team.id)
+			redirect_to bowler_path(bowler.id)
 		else
-			render :new
+			flash[:alert] = @team.errors.full_messages
+			redirect_to bowler_path(bowler.id)
 		end
 	end
 

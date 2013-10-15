@@ -8,6 +8,7 @@ class BowlersController < ApplicationController
 		@bowler = current_bowler
 		@game = IndividualGame.new
 		@games = @bowler.individual_games
+    @team = Team.new
 	end
 
 end

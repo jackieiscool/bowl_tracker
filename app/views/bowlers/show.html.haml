@@ -1,20 +1,40 @@
-%h2 
+%h1
 	= @bowler.name
 
-%div.info
-	.average
-		%h4 Average: 
-		= @bowler.average
+.info
+	%ul.average
+		%li
+			Average: 
+			= @bowler.average
+		%li
+			Best Game:
+			= @bowler.best
+		%li
+			Worst Game:
+			= @bowler.worst
+		%li
+			/ Last Game:
+			/ = @bowler.individual_games.last.score
 
-	.teams
-		%h4 My Teams:
+%div.teams
+	%h2 My Teams:
+	%ul
 		- @bowler.teams.each do |t|
 			%li 
 				= link_to t.name, team_path(t.id)
-		= link_to "Join New Team", new_bowler_team_path(current_bowler.id)
+	
+	%button.create_team Join New Team
+	%button.hide_team Hide
 
-%button.new "New Game"
-%button.hide "Hide"
+	%div.team_form
+		= form_for @team do |f|
+			= f.label :name
+			= f.text_field :name
+			= hidden_field_tag :id, current_bowler.id
+			= f.submit
+
+%button.new_game New Game
+%button.hide_game Hide
 
 %div.game_form
 	= form_for @game do |f|
