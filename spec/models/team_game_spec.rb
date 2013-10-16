@@ -11,5 +11,10 @@
 require 'spec_helper'
 
 describe TeamGame do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should belong_to(:team) }
+  it { should have_many(:individual_games) }
+
+  it { should validate_presence_of(:team) }
+
 end

@@ -1,0 +1,47 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/models/team_game.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/models/individual_game.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1381896478
+  }
+}

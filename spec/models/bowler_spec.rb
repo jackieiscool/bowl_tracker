@@ -21,5 +21,17 @@
 require 'spec_helper'
 
 describe Bowler do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:bowler) { FactoryGirl.create(:bowler) }
+
+  it { should have_many(:bowler_teams) }
+  it { should have_many(:teams) }
+  it { should have_many(:individual_games) }
+
+  describe ".average" do
+    it "should return a bowlers average" do
+      bowler.average.should == 0
+    end
+  end
+
 end

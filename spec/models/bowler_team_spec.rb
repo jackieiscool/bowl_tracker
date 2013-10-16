@@ -12,5 +12,11 @@
 require 'spec_helper'
 
 describe BowlerTeam do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it { should belong_to(:bowler) }
+  it { should belong_to(:team) }
+
+  it { should validate_presence_of(:bowler) }
+  it { should validate_presence_of(:team) }
+
 end
