@@ -1,21 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/models/team_game.rb": [
+      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/controllers/bowlers_controller.rb": [
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null,
         null,
         null,
         1,
         1,
         1,
+        1,
+        1,
         null,
+        null,
+        null
+      ],
+      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
         1,
         null
       ],
@@ -40,8 +46,27 @@
         null,
         1,
         null
+      ],
+      "/Users/jacquelineherrlin/Bowling/bowl_tracker/app/models/team.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1381896478
+    "timestamp": 1381897891
   }
 }

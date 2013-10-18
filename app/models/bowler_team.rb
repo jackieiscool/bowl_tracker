@@ -10,6 +10,11 @@
 #
 
 class BowlerTeam < ActiveRecord::Base
+  
 	belongs_to :bowler
 	belongs_to :team
+
+  validates :bowler, presence: true
+  validates :team, presence: true
+
 end

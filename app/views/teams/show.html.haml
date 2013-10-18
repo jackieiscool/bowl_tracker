@@ -1,8 +1,17 @@
 %h2
-	= @team.name
+  = @team.name
 	
 - @team.bowlers.each do |b|
-	%p
-		= link_to b.name, bowler_path(b.id)
+  %li
+    = b.name
 
-= link_to "New Game", new_team_team_game_path(@team.id)
+/ = link_to "New Game", new_team_team_game_path(@team.id)
+
+%button.create_game "New Game"
+
+%div.game_form
+  = form_for @game do |f|
+    - @team.bowlers.each do |bowler|
+      = f.fields_for :individual_games do |builder|
+        = builder.inspect
+        / # = render partial: 'game_form', :f => builder

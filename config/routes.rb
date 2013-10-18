@@ -12,6 +12,8 @@ BowlTracker::Application.routes.draw do
   	resources :team_games
   end
 
+  resources :team_games, only: [:create]
+
   resources :individual_games
 
 end
