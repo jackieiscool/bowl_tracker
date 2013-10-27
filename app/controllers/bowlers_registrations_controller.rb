@@ -7,14 +7,14 @@ class BowlersRegistrationsController < Devise::RegistrationsController
 	end
 
 	def create
-		@bowler = Bowler.new(params[:bowler])
+		@bowler = Bowler.create(params[:bowler])
 		team = Team.find_by_name(params[:bowler][:teams])
 		@bowler.teams << team if team
-		if @bowler.save
+		if @bowler.errors.empty?
 			sign_in(@bowler)
 			redirect_to bowler_path(@bowler.id)
 		else
-			render :new
+			redirect_to new_bowler_registration_path
 		end
 	end
 

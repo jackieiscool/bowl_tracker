@@ -3,6 +3,11 @@
 "use strict";
 $( document ).ready(function() {
 
+  hideInfo = function(){
+    // alert("Hi");
+    $('#info').toggleClass('unhide');
+  };
+
 
   $(".create_team").click(function() {
      $(".team_form").css("display", "inline");
