@@ -15,6 +15,9 @@
 		<ul>
       <% if current_bowler %>
         <li><%= link_to "My Profile", bowler_path(current_bowler.id) %></li>
+        <% current_bowler.teams.each do |team| %>
+          <li><%= link_to team.name, team_path(team.id) %></li>
+        <% end %>
   			<li><%= link_to "Sign Out", destroy_bowler_session_path, method: 'delete'%></li>
       <% end %>
 		</ul>

@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
 	def create
 		@team = Team.new(params[:team])
-		bowler = Bowler.find(params[:id])
+		bowler = current_bowler
 		if @team.save
 			bowler.teams << @team
 			redirect_to bowler_path(bowler.id)

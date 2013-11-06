@@ -99,20 +99,18 @@
    		<div class="panel-heading">
       <h4 class="panel-title accordianTitle">
         <a class="accordion-toggle accordianTitle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Teams
+          Join New Team
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-       <div id="my_teams">
-        <div id="form">
-          <h5> My Teams</h5>
-						<ul>
-						<% @bowler.teams.each do |t| %>
-							<li><%= link_to t.name, team_path(t.id)%></li>
-						<% end %> 
-						</ul>
+        <div id='form'>
+          <%= form_for @team do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.submit %>
+          <% end %>
         </div>
 	    </div>
 	  </div>
