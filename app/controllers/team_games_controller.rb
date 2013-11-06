@@ -8,7 +8,14 @@ class TeamGamesController < ApplicationController
 	end
 
 	def create
-
+    team_game = TeamGame.create(team_id: params[:team_id])
+    games = params[:games]
+    games.each_value do |g|
+      i = IndividualGame.new(g)
+      i.team_game = team_game
+      i.save
+    end
+    redirect_to team_path(params[:team_id])
 	end
 
 end

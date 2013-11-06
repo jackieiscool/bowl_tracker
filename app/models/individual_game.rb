@@ -15,6 +15,7 @@ class IndividualGame < ActiveRecord::Base
 	attr_accessible :frames, :score
 
 	belongs_to :bowler
+  belongs_to :team_game
 
 	validates :score, presence: true
 end

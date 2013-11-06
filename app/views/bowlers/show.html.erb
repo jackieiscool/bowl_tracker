@@ -1,6 +1,8 @@
 <div id="main_page" class="container">
   <div class="panel-group" id="accordion">
+    
     <div class="panel panel-default">
+      
       <div class="panel-heading">
         <h4 class="panel-title accordianTitle">
           <a class="accordion-toggle accordianTitle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -8,6 +10,7 @@
           </a>
         </h4>
       </div>
+
       <div id="collapseOne" class="panel-collapse collapse">
         <div class="panel-body">
           <div class="info" >
@@ -27,9 +30,12 @@
 						</ul>
           </div>
         </div>
+
       </div>
     </div>
+
     <div class="panel panel-default">
+
       <div class="panel-heading">
         <h4 class="panel-title accordianTitle">
           <a class="accordion-toggle accordianTitle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -37,11 +43,12 @@
           </a>
         </h4>
       </div>
+
       <div id="collapseTwo" class="panel-collapse collapse">
         <div class="panel-body">
-         <div>
-          <div id="form">
-            <h5> New Game</h5>
+         	<div>
+          	<div id="form">
+            	<h5> New Game</h5>
             	<%= form_for @game do |f| %>
 								<%= f.fields_for :frames do |d| %>
 									<%= d.label :frame_1 %>
@@ -75,135 +82,43 @@
 									<%= d.text_field :frame_10_a %>
 									<%= d.text_field :frame_10_b %>
 									<%= d.text_field :frame_10_c %>
+									<% end %>
 								<%= f.label :final_score %>
 								<%= f.text_field :score %>
 								<%= hidden_field_tag :bowler_id, current_bowler.id %>
 								<%= f.submit %>
-          </div>
-          	Things Will go here
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
+							<% end %>
+        		</div>
+        	</div>
+      	</div>
+    	</div>
+
+  	</div>
+  
+  	<div class="panel panel-default">
+   		<div class="panel-heading">
       <h4 class="panel-title accordianTitle">
         <a class="accordion-toggle accordianTitle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Chores
+          Teams
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-       <div id="chores">
+       <div id="my_teams">
         <div id="form">
-          <h5> Create Chores</h5>
-          <form action="/chores/" method ="post" >
-            <input id="input" type = "text" name ="name" placeholder= "Chores"/>
-            <button type="submit"> add Chore</button>
-          </form>
+          <h5> My Teams</h5>
+						<ul>
+						<% @bowler.teams.each do |t| %>
+							<li><%= link_to t.name, team_path(t.id)%></li>
+						<% end %> 
+						</ul>
         </div>
-        	Things will go here
-        <div id="assignments">
-          <div id="form">
-            <h5> Assign Chores</h5>
-            <form action="/member_chores/" method ="post" >
-              <input id="input" type = "text" name ="assigned_member" placeholder= "Household Member"/>
-              <input id="input" type = "text" name ="assigned_chore" placeholder= "Chore"/>
-              Week: <input type="number" name="week" min="1" max="4">
-              <button type="submit"> add Chore</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	    </div>
+	  </div>
+
+	</div>
 </div>
-</div>
-
-/ %h1
-/ 	= @bowler.name
-
-/ %div.panel-group#accordian
-/ 	%div.panel-heading
-/ 		%h4.panel-title-splash
-/ 			= link_to "Stats", "#collapseOne", html_options = { class: "accordion-toggle splash"}
-/ 	%div.panel-collapse#collapseOne
-/ 		%div.panel-body
-/ 			.info
-/ 				%ul.average
-/ 					%li
-/ 						Average: 
-/ 						= @bowler.average
-/ 					%li
-/ 						Best Game:
-/ 						= @bowler.best
-/ 					%li
-/ 						Worst Game:
-/ 						= @bowler.worst
-/ 					%li
-/ 						/ Last Game:
-/ 						/ = @bowler.individual_games.last.score
-
-/ %button.new_game.btn-lg New Game
-/ %button.hide_game.btn-lg Hide
-
-/ %div.game_form
-/ 	= form_for @game do |f|
-/ 		= f.fields_for :frames do |d|
-/ 			= d.label :frame_1
-/ 			= d.text_field :frame_1_a
-/ 			= d.text_field :frame_1_b
-/ 			= d.label :frame_2
-/ 			= d.text_field :frame_2_a
-/ 			= d.text_field :frame_2_b
-/ 			= d.label :frame_3
-/ 			= d.text_field :frame_3_a
-/ 			= d.text_field :frame_3_b
-/ 			= d.label :frame_4
-/ 			= d.text_field :frame_4_a
-/ 			= d.text_field :frame_4_b
-/ 			= d.label :frame_5
-/ 			= d.text_field :frame_5_a
-/ 			= d.text_field :frame_5_b
-/ 			= d.label :frame_6
-/ 			= d.text_field :frame_6_a
-/ 			= d.text_field :frame_6_b
-/ 			= d.label :frame_7
-/ 			= d.text_field :frame_7_a
-/ 			= d.text_field :frame_7_b
-/ 			= d.label :frame_8
-/ 			= d.text_field :frame_8_a
-/ 			= d.text_field :frame_8_b
-/ 			= d.label :frame_9
-/ 			= d.text_field :frame_9_a
-/ 			= d.text_field :frame_9_b
-/ 			= d.label :frame_10
-/ 			= d.text_field :frame_10_a
-/ 			= d.text_field :frame_10_b
-/ 			= d.text_field :frame_10_c
-/ 		= f.label :final_score
-/ 		= f.text_field :score
-/ 		= hidden_field_tag :bowler_id, current_bowler.id
-/ 		= f.submit
-
-/ 	%div.col-md-6
-/ 		%div.teams
-/ 			%h2 My Teams:
-/ 			%ul
-/ 				- @bowler.teams.each do |t|
-/ 					%li 
-/ 						= link_to t.name, team_path(t.id)
-			
-/ 			%button.create_team.btn-lg Join New Team
-/ 			%button.hide_team.btn-lg Hide
-
-/ 			%div.team_form
-/ 				= form_for @team do |f|
-/ 					= f.label :name
-/ 					= f.text_field :name
-/ 					= hidden_field_tag :id, current_bowler.id
-/ 					= f.submit
 
 
 

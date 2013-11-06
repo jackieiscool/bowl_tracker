@@ -6,6 +6,7 @@
 #  score      :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  team_id    :integer
 #
 
 require 'spec_helper'
