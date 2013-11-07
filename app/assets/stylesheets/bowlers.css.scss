@@ -7,8 +7,6 @@ body {
 }
 
 button {
-  // width: 15em;
-  // height: 2.5em;
   color: #C5BD99;
   background-color: #701112;
   -moz-border-radius: 15px;
@@ -29,15 +27,8 @@ button {
 }
 
 .teams {
-	// padding: 10px;
   background-color: #C5BD99;
-  // position: absolute;
-  // right: 1%;
-  // top: 0;
-  // bottom: 0;
-  // width: 40%;
   text-align: center;
-  // padding: 5px;
 }
 
 .teams li {
@@ -73,27 +64,22 @@ button {
   display: none;
 }
 
-form {
-  width: 10em;
+.score_board {
+  background-color: #ffffff;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black; 
+  padding: 0;
+  color: black;
 }
 
-.panel-heading {
-  background-color: #424242;
+.score_board input {
+  width: 50%;
 }
 
-// label {
-// 	width: 4em;
-// 	float: left;
-// 	text-align: right;
-// 	margin-right: 0.5em;
-// 	display: block;
-// 	color: #701112;
-// 	font-weight: bold;
-// }
-
-// input {
-//   margin-left: 4.5em;
-//   -moz-border-radius: 15px;
-//   border-radius: 15px;
-// }
- 
+.score_table td {
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  padding: 0;
+}

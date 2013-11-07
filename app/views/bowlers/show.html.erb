@@ -49,42 +49,47 @@
          	<div>
           	<div id="form">
             	<h5> New Game</h5>
-            	<%= form_for @game do |f| %>
-								<%= f.fields_for :frames do |d| %>
-									<%= d.label :frame_1 %>
-									<%= d.text_field :frame_1_a %>
-									<%= d.text_field :frame_1_b %>
-									<%= d.label :frame_2 %>
-									<%= d.text_field :frame_2_a %>
-									<%= d.text_field :frame_2_b %>
-									<%= d.label :frame_3 %>
-									<%= d.text_field :frame_3_a %>
-									<%= d.text_field :frame_3_b %>
-									<%= d.label :frame_4 %>
-									<%= d.text_field :frame_4_a %>
-									<%= d.text_field :frame_4_b %>
-									<%= d.label :frame_5 %>
-									<%= d.text_field :frame_5_a %>
-									<%= d.text_field :frame_5_b %>
-									<%= d.label :frame_6 %>
-									<%= d.text_field :frame_6_a %>
-									<%= d.text_field :frame_6_b %>
-									<%= d.label :frame_7 %>
-									<%= d.text_field :frame_7_a %>
-									<%= d.text_field :frame_7_b %>
-									<%= d.label :frame_8 %>
-									<%= d.text_field :frame_8_a %>
-									<%= d.text_field :frame_8_b %>
-									<%= d.label :frame_9 %>
-									<%= d.text_field :frame_9_a %>
-									<%= d.text_field :frame_9_b %>
-									<%= d.label :frame_10 %>
-									<%= d.text_field :frame_10_a %>
-									<%= d.text_field :frame_10_b %>
-									<%= d.text_field :frame_10_c %>
-									<% end %>
-								<%= f.label :final_score %>
-								<%= f.text_field :score %>
+            	<%= form_for @game, :html => {:class => "score_board"} do |f| %>
+                <table class="score_table">
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    <th>Final</th>
+                  </tr>
+                  <tr>
+    								<%= f.fields_for :frames do |d| %>
+    									<td><%= d.text_field :frame_1_a %>
+    									<%= d.text_field :frame_1_b %></td>
+    									<td><%= d.text_field :frame_2_a %>
+    									<%= d.text_field :frame_2_b %></td>
+    									<td><%= d.text_field :frame_3_a %>
+    									<%= d.text_field :frame_3_b %></td>
+    									<td><%= d.text_field :frame_4_a %>
+    									<%= d.text_field :frame_4_b %></td>
+    									<td><%= d.text_field :frame_5_a %>
+    									<%= d.text_field :frame_5_b %></td>
+    									<td><%= d.text_field :frame_6_a %>
+    									<%= d.text_field :frame_6_b %></td>
+    									<td><%= d.text_field :frame_7_a %>
+    									<%= d.text_field :frame_7_b %></td>
+    									<td><%= d.text_field :frame_8_a %>
+    									<%= d.text_field :frame_8_b %></td>
+    									<td><%= d.text_field :frame_9_a %>
+    									<%= d.text_field :frame_9_b %></td>
+    									<td><%= d.text_field :frame_10_a %>
+    									<%= d.text_field :frame_10_b %>
+    									<% end %>
+    								<td><%= f.text_field :score %></td>
+                  </tr>
+                </table>
 								<%= hidden_field_tag :bowler_id, current_bowler.id %>
 								<%= f.submit %>
 							<% end %>

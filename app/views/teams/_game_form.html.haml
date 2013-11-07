@@ -1,34 +1,51 @@
-= label_tag :frame_1
-= text_field_tag "games[#{bowler.id}][frames][frame_1_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_1_b]"
-= label_tag :frame_2
-= text_field_tag "games[#{bowler.id}][frames][frame_2_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_2_b]"
-= label_tag :frame_3
-= text_field_tag "games[#{bowler.id}][frames][frame_3_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_3_b]"
-= label_tag :frame_4
-= text_field_tag "games[#{bowler.id}][frames][frame_4_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_4_b]"
-= label_tag :frame_5
-= text_field_tag "games[#{bowler.id}][frames][frame_5_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_5_b]"
-= label_tag :frame_6
-= text_field_tag "games[#{bowler.id}][frames][frame_6_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_6_b]"
-= label_tag :frame_7
-= text_field_tag "games[#{bowler.id}][frames][frame_7_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_7_b]"
-= label_tag :frame_8
-= text_field_tag "games[#{bowler.id}][frames][frame_8_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_8_b]"
-= label_tag :frame_9
-= text_field_tag "games[#{bowler.id}][frames][frame_9_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_9_b]"
-= label_tag :frame_10
-= text_field_tag "games[#{bowler.id}][frames][frame_10_a]"
-= text_field_tag "games[#{bowler.id}][frames][frame_10_b]"
-= text_field_tag "games[#{bowler.id}][frames][frame_10_c]"
-= label_tag :final_score
-= text_field_tag "games[#{bowler.id}][score]"
+%table.score_table
+  %tr
+    %th
+      = bowler.name
+    %th 1
+    %th 2
+    %th 3
+    %th 4
+    %th 5
+    %th 6
+    %th 7
+    %th 8
+    %th 9
+    %th 10
+    %th Final
+  %tr
+    %td
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_1_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_1_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_2_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_2_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_3_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_3_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_4_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_4_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_5_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_5_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_6_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_6_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_7_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_7_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_8_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_8_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_9_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_9_b]"
+    %td
+      = text_field_tag "games[#{bowler.id}][frames][frame_10_a]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_10_b]"
+      = text_field_tag "games[#{bowler.id}][frames][frame_10_c]"
+    %td
+      = text_field_tag "games[#{bowler.id}][score]"
 = hidden_field_tag "games[#{bowler.id}][bowler_id]", bowler.id

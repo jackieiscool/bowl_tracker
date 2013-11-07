@@ -9,7 +9,7 @@
 
 %button.create_game "New Game"
 
-%div.game_form
+%div.score_board
   = form_tag(team_team_games_path(@team.id), method: "post") do
     - @team.bowlers.each do |bowler|
       = render 'game_form', :bowler => bowler

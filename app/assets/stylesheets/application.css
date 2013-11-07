@@ -129,3 +129,11 @@ nav a {
   -ms-transform-origin: 0 50%;
   -o-transform-origin: 0 50%;
 }
+
+/*form input {
+  width: 50%;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}*/
+

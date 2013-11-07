@@ -22,7 +22,7 @@ $( document ).ready(function() {
     $(".create_team").css("display", "inline");
   });
 
-    $(".new_game").click(function() {
+    $(".create_game").click(function() {
      $(".game_form").css("display", "inline");
      $(".hide_game").css("display", "inline");
      $(".new_game").css("display", "none");
