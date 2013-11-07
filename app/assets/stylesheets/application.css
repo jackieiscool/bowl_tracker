@@ -14,19 +14,26 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #701112;
 }
 
 h1 {
   font-size: 250%;
+  margin: 0;
 }
 
 .header {
   background-color: #C5BD99;
+  margin: 0;
 }
 
 .title{
   text-align: center;
   color: #701112;
+}
+
+div {
+  border-style:none;
 }
 
 .alert {
@@ -97,11 +104,11 @@ nav:hover ~ .main
 }
 
 li:hover {
-	color: #701112;
+	color: #C5BD99;
 }
 
 li a:hover {
-	color: #701112;
+	color: #C5BD99;
 }
 
 nav a {
@@ -115,7 +122,6 @@ nav a {
   right: 0;
   bottom: 0;
   padding: 30px 15%;
-  background-color: #fff;
   overflow: auto;
   z-index: 0;
   -webkit-transform-origin: 0 50%;
