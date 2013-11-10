@@ -17,4 +17,8 @@ class BowlerTeam < ActiveRecord::Base
   validates :bowler, presence: true
   validates :team, presence: true
 
+  def change
+    things
+  end
+
 end
